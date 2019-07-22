@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onload='getObj("table")'>
+    <div class="loader">
+        <img src="pikaball.gif" alt="loading...">
+    </div>
+
+    <div class="layoutAdmin">
+        <div class="navbar">
+            <div onclick="location.href='index.html'" style="cursor: pointer;">
+                <img src="pokeball_PNG26.png" alt="ceva rotund" onclick="location.href='index.html'">
+                <h1 onclick="location.href='index.html'"> Pokeshop</h1>
+            </div>
+            <button onclick="location.href='cos.html'" type="button">
+                <img src="cart.svg" width="20px" height="20px" alt="">
+                Cumparaturi <span id="cos"></span></button>
+            <!-- <button onclick="location.href='index.html'" type="button">
+                <img src="shop.png" alt="">
+                shop</button> -->
+        </div>
+
+        <div class="manage">
+
+            <form id="myForm" class="hidden" onsubmit="add(event,this)">
+                <input type="text" name="numePokemon" placeholder="nume ">
+                <select name="tipPokemon">
+                    <option value="0">Tip</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Foc">Foc</option>
+                    <option value="Apa">Apa</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Iarba">Iarba</option>
+                    <option value="Gheata">Gheata</option>
+                    <option value="Luptator">Luptator</option>
+                    <option value="Otrava">Otrava</option>
+                    <option value="Pamant">Pamant</option>
+                    <option value="Zburator">Zburator</option>
+                    <option value="Psihic">Psihic</option>
+                    <option value="Gandac">Gandac</option>
+                    <option value="Roca">Roca</option>
+                    <option value="Fantoma">Fantoma</option>
+                    <option value="Dragon">Dragon</option>
+                    <option value="Intunecat">Intunecat</option>
+                    <option value="Otel">Otel</option>
+                    <option value="Zana">Zana</option>
+                </select>
+                <input type="number" name="cantitatePokemon" placeholder="cantitate ">
+                <input type="number" name="cost" placeholder="cost ">
+
+                <input type="text" name="srcPokemon" placeholder="sursa foto ">
+
+                <textarea name="descriere" id="desc" cols="30" rows="10"
+                    placeholder="Descrierea pokemonului"></textarea> <br>
+                <button type="submit" name="submit">Submit</button>
+                <button type="reset" onclick="hideForm()">Cancel</button>
+
+            </form>
+
+            <button class="adaugaBtn" onclick="showForm()">+</button>
+
+            <div id="output">
+                <table id="tabel">
+                    <thead>
+                        <th>Nume</th>
+                        <th>Imagine</th>
+                        <th colspan="2" align="left">Tip</th>
+                        <th>Pret</th>
+                        <th>Cantitate</th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class='footer'>footer </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

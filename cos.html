@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onload='getObj("cos")'>
+    <div class="loader">
+        <img src="pikaball.gif" alt="loading...">
+    </div>
+
+    <div class="layoutAdmin">
+        <div class="navbar">
+            <div onclick="location.href='index.html'" style="cursor: pointer;">
+                <img src="pokeball_PNG26.png" alt="ceva rotund" onclick="location.href='index.html'">
+                <h1 onclick="location.href='index.html'"> Pokeshop </h1>
+
+            </div>
+            <button onclick="location.href='cos.html'" type="button">
+                <img src="cart.svg" alt="">
+                Cumparaturi <span id="cos"></span></button>
+            <!-- <button onclick="location.href='index.html'" type="button">
+                <img src="shop.png"  alt="">
+                shop</button> -->
+        </div>
+
+        <div class="manage">
+            <div id="output">
+                <table id="tabelCos">
+                    <thead>
+                        <th>Nume</th>
+                        <th>Pret</th>
+                        <th>Cantitate</th>
+                        <th>SubTotal</th>
+                        <th></th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+        <div class='footer'>footer </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

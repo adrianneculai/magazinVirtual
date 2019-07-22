@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="getObj('main')">
+
+    <div class="loader">
+
+        <img src="pikaball.gif" alt="loading...">
+
+    </div>
+
+    <div class="layout">
+        <div class="header">
+            <div class="siema">
+                <div><img id="pila" src="charmander.png" alt=""></div>
+                <div><img id="pila" src="charmander.png" alt=""></div>
+                <div><img id="pila" src="charmander.png" alt=""></div>
+                <div><img id="pila" src="charmander.png" alt=""></div>
+                <div><img id="pila" src="charmander.png" alt=""></div>
+                <div><img id="pila" src="charmander.png" alt=""></div>
+
+            </div>
+
+            <button class="prev">Preview</button>
+            <button class="next">Next</button>
+
+            <script src="siema.min.js"></script>
+            <script>
+                const mySiema = new Siema({
+                    easing: 'cubic-bezier(.17,.67,.32,1.34)',
+                    loop: true,
+                    perPage: 3
+                });
+                document.querySelector(".prev").addEventListener("click", () => mySiema.prev())
+                document.querySelector(".next").addEventListener("click", () => mySiema.next())
+
+                setInterval(() => {
+                    mySiema.next()
+                }, 6000)
+            </script>
+        </div>
+        <div class="navbar">
+            <div>
+                <img src="pokeball_PNG26.png" alt="">
+                <h1> Pokeshop</h1>
+            </div>
+            <button onclick="location.href='cos.html'" type="button">
+                <img src="cart.svg" alt="">
+                Cumparaturi <span id="cos"></span> </button>
+            <button onclick="location.href='admin.html'" type="button">
+                <img src="lock.png" alt="">
+                Admin</button>
+        </div>
+        <div class='content'>
+        </div>
+        <div class='footer'>footer </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

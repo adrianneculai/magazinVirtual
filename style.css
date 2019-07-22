@@ -1,0 +1,775 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    }
+
+a:link {
+    text-decoration: none;
+    }
+
+a:visited {
+text-decoration: none;
+}
+
+
+.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cos.ascunde {
+    display: none;
+}
+
+.siema {
+    height: 30vh;
+    background-color: aquamarine;
+}
+
+.siema>div>img {
+    width: 20px;
+}
+
+#pila {
+    width: 30vh;
+}
+
+.loader.hidden {
+    animation: fadeOut;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loader>img {
+    width: 300px;
+}
+
+body {
+    background-image: url(poekepatern.jpg);
+    /* background-size: 30% 20%; */
+    background-attachment: fixed;
+}
+
+.layout {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 60px 30vh 1fr auto;
+    grid-template-columns: 1fr 250px 250px 250px 250px 250px 1fr;
+    grid-template-areas: 
+    ". b b b b b ." 
+    ". a a a a a ." 
+    ". c c c c c ." 
+    ". d d d d d .";
+}
+
+.navbar>button {
+    background-color: rgb(250, 189, 75);
+    color: rgb(15, 13, 10);
+    padding: 0px 20px;
+    height: 80%;
+    font-size: 120%;
+    border-radius: 10px;
+    width: auto;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.navbar>button:hover {
+    background-color: rgba(13, 127, 172, 0.801);
+    color: white;
+}
+
+.header {
+    background-color: rgb(255, 255, 255);
+    grid-area: a;
+}
+
+.navbar>button>img {
+    /* background-color: blueviolet; */
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.navbar>div>img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.navbar>div {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: wheat;
+}
+
+.navbar {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0px 20px;
+    grid-area: b;
+    background-color: rgb(0, 0, 0);
+    
+}
+
+.footer {
+    background-color: rgb(0, 0, 0);
+    grid-area: d;
+    height: 50px;
+}
+
+.content {
+    background-color: rgb(199, 199, 199);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    grid-area: c;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.produseWrap {
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: stretch; */
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 0 20px 0;
+    border-bottom: 5px solid rgb(119, 121, 98);
+    height: 300px;
+    padding: 10px;
+    text-align: center;
+}
+
+.produse {
+    border-radius: 20px 0 20px 0;
+    border: 1px solid rgb(7, 7, 7);
+}
+
+.produse>img {
+    width: 80%;
+}
+
+.produse>h3:nth-child(2) {
+    background-color: rgb(0, 0, 0);
+    color: wheat;
+    font-size: 150%;
+}
+
+.produse>h3:nth-child(3) {
+    /* background-color: rgb(0, 0, 0); */
+    color: rgb(5, 5, 5);
+    font-size: 150%;
+    padding: 5px;
+}
+
+.produse>button:nth-child(4) {
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    background-color: rgb(216, 214, 214);
+    width: 45%;
+    padding: 5px;
+    font-weight: 550;
+}
+
+.produse>button:nth-child(5) {
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background-color: red;
+    width: 45%;
+    padding: 5px;
+    font-weight: 550;
+}
+
+.header.none {
+    display: none;
+}
+
+.tableName{
+
+    cursor: pointer;
+}
+
+.manage {
+    background-color: rgb(0, 0, 0);
+    grid-area: e;
+    padding: 20px;
+}
+
+.manage>div>table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: black;
+    color: wheat;
+    font-size: 20px;
+}
+
+.fullscreen{
+position: fixed;
+top: 0;
+right: 0;
+left: 0;
+bottom:0;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.bgWhite{
+
+background-color: white;
+padding: 60px;
+
+
+}
+
+
+/* --------------------sageti la tabel cos----------------------- */
+
+
+.tableCantitate{
+    width:120px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15pt;
+    /* font-weight: bold; */
+}
+
+.flex{
+    display: flex;
+    justify-content:space-between;
+    align-items: center ;
+}
+
+
+.sageataStanga {
+    width: 23px;
+    height: 40px;
+    background: url(sageti.png) 100px 95px;
+     background-size: 50px 50px;
+     cursor: pointer;
+}
+
+.sageataDreapta {
+    width: 23px;
+    height: 40px;
+    background: url(sageti.png) 123px 95px;
+     background-size: 50px 50px;
+     cursor: pointer;
+
+}
+
+.sageataStanga:hover{
+   
+    width: 23px;
+    height: 40px;
+    background: url(sagetiRosu.png) 100px 95px;
+     background-size: 50px 50px;
+     cursor: pointer;
+
+}
+
+
+.sageataDreapta:hover{
+    width: 23px;
+    height: 40px;
+    background: url(sagetVerdei.png) 123px 95px;
+     background-size: 50px 50px;
+     cursor: pointer;
+    }
+
+
+
+/* --------------------detalii----------------------- */
+
+#detaliiPoke {
+    border-radius: 20px;
+    padding: 30px;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    grid-template-columns: 3fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-areas: 
+    "stanga dreapta ." 
+    "stanga dreapta .";
+}
+
+
+.stanga {
+    grid-area: stanga;
+    /* background-color: aqua;
+    border: 1px solid brown; */
+    justify-self: center;
+    align-self: top;
+    text-align: center;
+}
+
+.dreapta {
+    grid-area: dreapta;
+    /* background-color: aqua;
+    border: 1px solid brown; */
+    justify-self: center;
+    align-self: top;
+   }
+
+.coloane{
+    column-count: 2;
+    column-gap: 25px;
+    /* column-rule-style: dotted; */
+}
+
+.dreapta hr{
+
+    border-top: .5px solid rgba(173, 158, 158, 0.199);
+
+}
+.cumpara{
+    grid-area: cumpara;
+    justify-self: center;
+    align-self: center;
+}
+.butonCumpara{
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background-color: red;
+    width: 45%;
+    padding: 10px;
+    font-weight: 550;
+    
+}
+
+.stanga>#poza {
+justify-self: center;
+width:300px;
+height:300px;
+}
+
+#nrBuc{
+    border-radius: 8px;
+    float:none;
+    width: 45%;
+    border: 1px solid black;
+}
+
+.tipPoke{
+display:flex;
+align-items: center;
+}
+
+/* ----------------------------alerta la cumparare----------------------------- */
+
+.alertDiv{
+position:absolute;
+left:0%;
+right:0%;
+margin-left:auto;
+margin-right:auto;
+width:100%;
+background-color: brown;
+text-align: center;
+font-size:25px;
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+padding: 20px 0;
+
+visibility: visible;
+opacity: 1;
+transition: opacity 2s linear;
+}
+
+.divHidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+  }
+
+
+
+
+/* ----------------------------formular----------------------------- */
+
+#output {
+    margin-top: 20px;
+}
+
+tr:nth-child(odd) {
+    background: rgb(238, 199, 25);
+}
+
+tr:nth-child(even) {
+    background: rgb(255, 255, 255);
+}
+
+tr:hover {
+    background-color: rgba(231, 181, 233, 0.877);
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    align-content: center;
+}
+
+.editButton {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(edit.png);
+    cursor: pointer;
+}
+
+.cumparaButton {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(cumpara.png);
+    cursor: pointer;
+
+}
+
+.cumparaButton:hover {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(cumparaHover.png);
+    cursor: pointer;
+
+}
+
+
+.editButton:hover {
+    width: 40px;
+    height: 40px;
+    background-image: url(editHover.png);
+    cursor: pointer;
+
+}
+
+.deleteButton {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(delete.png);
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    width: 40px;
+    height: 40px;
+    background-image: url(deleteHover.png);
+    cursor: pointer;
+}
+
+.tableimg>img {
+    width: 60px;
+    vertical-align: middle;
+}
+
+.manage>form {
+    width: 100%;
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+}
+
+
+input, select, textarea, form>button {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    margin: 0 0 5px 0;
+    border: 5px solid black;
+}
+
+input[name=numePokemon], select[name=tipPokemon], input[name=cantitatePokemon], input[name=cost] {
+    width: 25%;
+}
+
+input[name=srcPokemon] {
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    max-height: 200px;
+    width: 100%;
+}
+
+.layoutAdmin {
+    width: 100vw;
+    height: 100vh;
+    display: inline-grid;
+    grid-template-rows: 60px 1fr auto;
+    grid-template-columns: 1fr 250px 250px 250px 250px 250px 1fr;
+    grid-template-areas: ". b b b b b ." ". e e e e e ." ". d d d d d .";
+}
+
+.adaugaBtn {
+    width: 100%;
+    font-size: 30px;
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tableTip {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 80px;
+}
+
+.tableTipTxt {
+    text-align: left;
+}
+
+
+/* ----------------------------poze tip pokemoni ----------------------------- */
+
+
+.Normal {
+    background: url(pokemon\ tip.png) 0 0;
+}
+
+.Foc {
+    background: url(pokemon\ tip.png) -83px 0px;
+}
+
+.Apa {
+    background: url(pokemon\ tip.png) -164px 0;
+}
+
+.Electric {
+    background: url(pokemon\ tip.png) -244px 0;
+}
+
+.Gheata {
+    background: url(pokemon\ tip.png) 40px 0;
+}
+
+.Iarba {
+    background: url(pokemon\ tip.png) 122px 0;
+}
+
+.Intunecat {
+    background: url(pokemon\ tip.png) -246px 40px;
+}
+
+.Dragon {
+    background: url(pokemon\ tip.png) -164px 40px;
+}
+
+.Fantoma {
+    background: url(pokemon\ tip.png) -83px 40px;
+}
+
+.Roca {
+    background: url(pokemon\ tip.png) -3px 40px;
+}
+
+.Zana {
+    background: url(pokemon\ tip.png) 40px 40px;
+}
+
+.Otel {
+    background: url(pokemon\ tip.png) 122px 40px;
+}
+
+.Zburator {
+    background: url(pokemon\ tip.png) 652px 118px;
+}
+
+.Pamant {
+    background: url(pokemon\ tip.png) 734px 118px;
+}
+
+.Otrava {
+    background: url(pokemon\ tip.png) 815px 118px;
+}
+
+.Luptator {
+    background: url(pokemon\ tip.png) 897px 118px;
+}
+
+.Gandac {
+    background: url(pokemon\ tip.png) 938px 118px;
+}
+
+.Psihic {
+    background: url(pokemon\ tip.png) 1019px 118px;
+}
+
+.container {
+    /* margin-left: 10px; */
+    width: 40px;
+    height: 40px;
+    background-size: 449px 190px;
+}
+
+/* ----------------------------responsive----------------------------- */
+
+
+
+@media only screen and (max-width: 1300px) {
+    .layout {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 60px 30vh 1fr auto;
+        grid-template-columns: 1fr 250px 250px 250px 250px 1fr;
+        grid-template-areas: ". b b b b ." ". a a a a ." ". c c c c ." ". d d d d .";
+    }
+    .content {
+        background-color: rgb(199, 199, 199);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        grid-area: c;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+        grid-gap: 20px;
+        padding: 20px;
+    }
+    .layoutAdmin {
+        width: 100vw;
+        height: 100vh;
+        display: inline-grid;
+        grid-template-rows: 60px 1fr auto;
+        grid-template-columns: 1fr 250px 250px 250px 250px 1fr;
+        grid-template-areas: ". b b b b ." ". e e e e ." ". d d d d .";
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .layout {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 60px 30vh 1fr auto;
+        grid-template-columns: 1fr 250px 250px 250px 1fr;
+        grid-template-areas: ". b b b ." ". a a a ." ". c c c ." ". d d d .";
+    }
+    .content {
+        background-color: rgb(199, 199, 199);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        grid-area: c;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        grid-gap: 20px;
+        padding: 20px;
+    }
+    .layoutAdmin {
+        width: 100vw;
+        height: 100vh;
+        display: inline-grid;
+        grid-template-rows: 60px 1fr auto;
+        grid-template-columns: 1fr 250px 250px 250px 1fr;
+        grid-template-areas: ". b b b ." ". e e e ." ". d d d .";
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .layout {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 60px 30vh 1fr auto;
+        grid-template-columns: 1fr 250px 250px 1fr;
+        grid-template-areas: ". b b ." ". a a ." ". c c ." ". d d .";
+    }
+    .content {
+        background-color: rgb(199, 199, 199);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        grid-area: c;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        grid-gap: 20px;
+        padding: 20px;
+    }
+    .layoutAdmin {
+        width: 100vw;
+        height: 100vh;
+        display: inline-grid;
+        grid-template-rows: 60px 1fr auto;
+        grid-template-columns: 1fr 250px 250px 1fr;
+        grid-template-areas: ". b b ." ". e e ." ". d d .";
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .layout {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 60px 30vh 1fr auto;
+        grid-template-columns: 1fr 250px 1fr;
+        grid-template-areas: ". b ." ". a ." ". c ." ". d .";
+    }
+    .content {
+        background-color: rgb(199, 199, 199);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        grid-area: c;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(100px, 1fr));
+        grid-gap: 20px;
+        padding: 20px;
+    }
+    .layoutAdmin {
+        width: 100vw;
+        height: 100vh;
+        display: inline-grid;
+        grid-template-rows: 60px 1fr auto;
+        grid-template-columns: 1fr 250px 1fr;
+        grid-template-areas: ". b ." ". e ." ". d .";
+    }
+}

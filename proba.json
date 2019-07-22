@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Charmander",
+        "price": 2000,
+        "scr": "https://vignette.wikia.nocookie.net/pokemon/images/7/73/004Charmander.png/revision/latest?cb=20140724195345"
+    },
+    {
+        "name": "Bulbasaur",
+        "price": 2300,
+        "scr": "https://vignette.wikia.nocookie.net/pokemon/images/2/21/001Bulbasaur.png/revision/latest/scale-to-width-down/350?cb=20140328190757"
+    },
+    {
+        "name": "Pikachu",
+        "price": 4000,
+        "scr": "https://vignette.wikia.nocookie.net/pokemon/images/0/0d/025Pikachu.png/revision/latest?cb=20140328192412"
+    }
+]
