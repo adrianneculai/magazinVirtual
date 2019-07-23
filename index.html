@@ -19,33 +19,36 @@
 
     <div class="layout">
         <div class="header">
-            <div class="siema">
-                <div><img id="pila" src="charmander.png" alt=""></div>
-                <div><img id="pila" src="charmander.png" alt=""></div>
-                <div><img id="pila" src="charmander.png" alt=""></div>
-                <div><img id="pila" src="charmander.png" alt=""></div>
-                <div><img id="pila" src="charmander.png" alt=""></div>
-                <div><img id="pila" src="charmander.png" alt=""></div>
+
+            <div class="carousel">
+                <button class="carousel__button carousel__button--left">
+                    <img class="sageataStanga"></img>
+                </button>
+                <div class="carousel__track-container">
+                    <ul class="carousel__track">
+                        <li class="carousel__slide">
+                            <img class="carousel__image" src="charmander.png" alt="">
+                        </li>
+                        <li class="carousel__slide">
+                            <img class="carousel__image" src="charmander.png" alt="">
+                        </li>
+                        <li class="carousel__slide">
+                            <img class="carousel__image" src="charmander.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel__button carousel__button--right">
+                    <img class="sageataDreapta"></img>
+                </button>
+
+                <div class="carousel__nav">
+                    <button class="carousel__indicator current-slide"></button>
+                    <button class="carousel__indicator"></button>
+                    <button class="carousel__indicator"></button>
+                </div>
 
             </div>
 
-            <button class="prev">Preview</button>
-            <button class="next">Next</button>
-
-            <script src="siema.min.js"></script>
-            <script>
-                const mySiema = new Siema({
-                    easing: 'cubic-bezier(.17,.67,.32,1.34)',
-                    loop: true,
-                    perPage: 3
-                });
-                document.querySelector(".prev").addEventListener("click", () => mySiema.prev())
-                document.querySelector(".next").addEventListener("click", () => mySiema.next())
-
-                setInterval(() => {
-                    mySiema.next()
-                }, 6000)
-            </script>
         </div>
         <div class="navbar">
             <div>

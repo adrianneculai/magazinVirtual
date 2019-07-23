@@ -248,15 +248,119 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
+/* --------------------carousel----------------------- */
+
+.carousel{
+    position: relative;
+    height: 800px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel__image{
+width:100%;
+}
+
+.carousel__track-container{
+
+background: aqua;
+/* padding: 10px; */
+height: 100%;
+position: relative;
+}
+
+.carousel__track{
+padding: 0;
+margin:0;
+list-style: none;
+}
+
+.carousel__slide{
+    position:absolute;
+    top:0;
+    bottom: 0;
+    width:100%;
+}
+.carousel__button{
+    position: absolute;
+    top:50%;
+    transform:translate(-50%);
+     background: transparent;
+    border: 0;
+}
+
+.carousel__button--left{
+    left:-50px;
+    cursor: pointer;
+}
+
+.carousel__button--right{
+    right:-50px;
+    cursor: pointer;
+}
+
+.carousel__nav{
+/* background: pink; */
+display: flex;
+justify-content: center;
+padding: 10px 0;
+}
+.carousel__indicator{
+border:0;
+border-radius: 50%;
+width:20px;
+height:20px;
+background: rgba(0, 0, 0, .3);
+margin: 0 10px;
+}
+
+
+.carousel__indicator.current-slide{
+    background: rgba(0, 0, 0, .75);
+}
+/* --------------------alert----------------------- */
+
 
 .bgWhite{
 
-background-color: white;
+/* background-color: white; */
 padding: 60px;
-
-
+width: 200px;
+height: 300px;
+background:url(pokeAlert.png);
+background-position: center;
+background-size: 50% 50%;
+background-repeat: no-repeat;
+background-size: contain;
+/* background-color: white; */
+color: white;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+filter: drop-shadow(0 0 0.75rem crimson);
 }
 
+.spanAlert{
+font-size: 15px;
+font-weight: bold;
+}
+
+#okBtn{
+    width:55px;
+    height: 55px;
+    padding: 5px;
+    border-radius: 50%;
+    margin-top: 32px;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+}
+
+#okBtn:hover{
+    background: rgb(249,2,19);
+    background: linear-gradient(180deg, rgba(249,2,19,1) 0%, rgba(0,0,0,1) 100%); 
+
+}
 
 /* --------------------sageti la tabel cos----------------------- */
 
@@ -374,10 +478,25 @@ padding: 60px;
 }
 
 .stanga>#poza {
+    justify-self: center;
+    width:300px;
+    height:300px;
+    }
+   
+
+.stanga>#pozaShop {
 justify-self: center;
 width:300px;
 height:300px;
+cursor: pointer;
+filter: drop-shadow(0 0 0.75rem crimson);
 }
+
+
+#pozaShop:hover{
+    filter: drop-shadow(0 0 10rem crimson);
+}
+
 
 #nrBuc{
     border-radius: 8px;

@@ -315,7 +315,11 @@ function alertulMeu(idx, pokeCart) {
     var div = document.createElement("div");
     div.className = "fullscreen";
     div.innerHTML = `
-    <div class="bgWhite">Ai depasit stocul disponibil (${pokemon[pokeCart[idx].index].cantitate})
+    <div class="bgWhite">  <div class="spanAlert"> Ai depasit stocul disponibil </div>
+
+    <hr style="height:15px; visibility:hidden;" />
+
+    (${pokemon[pokeCart[idx].index].cantitate} buc)
     <button id="okBtn">Ok</button>
     </div>`;
     div.querySelector("#okBtn").addEventListener("click", function () {
@@ -401,10 +405,11 @@ async function cumparaProduse() {
 function drawCeAiCumparat() {
     let pokeCart = JSON.parse(localStorage.getItem("pokemon"))
     let ceAiCumparat = ''
-    for (var i in pokeCart) {
-        ceAiCumparat += `<div class="stanga">
-    <img id="poza" src="${pokemon[pokeCart[i].index].scr}" alt="">
-`}
+        ceAiCumparat = `<div class="stanga">
+    <img id="pozaShop" src="pokeballBig.png" alt="" onclick="location.href='index.html'"> <br>
+    <h2 style="color:white; font-family:arial;" ">Multumim </h2>
+    <h2 style="color:white; font-family:arial;"> pentru cumparaturi </h2>
+`
     document.querySelector(".manage").innerHTML = ceAiCumparat
     document.querySelector(".loader").classList.add("hidden")
 }
