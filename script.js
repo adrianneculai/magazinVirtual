@@ -25,6 +25,7 @@ async function getObj(param) {
     if (param == "main") {
         console.log("ajunge in getObj main")
         draw()
+        drawCarousel()
     } else if (param === "table") {
         console.log("ajunge in getObj table")
         drawTable()
@@ -405,7 +406,7 @@ async function cumparaProduse() {
 function drawCeAiCumparat() {
     let pokeCart = JSON.parse(localStorage.getItem("pokemon"))
     let ceAiCumparat = ''
-        ceAiCumparat = `<div class="stanga">
+    ceAiCumparat = `<div class="stanga">
     <img id="pozaShop" src="pokeballBig.png" alt="" onclick="location.href='index.html'"> <br>
     <h2 style="color:white; font-family:arial;" ">Multumim </h2>
     <h2 style="color:white; font-family:arial;"> pentru cumparaturi </h2>
@@ -413,3 +414,177 @@ function drawCeAiCumparat() {
     document.querySelector(".manage").innerHTML = ceAiCumparat
     document.querySelector(".loader").classList.add("hidden")
 }
+
+
+
+function drawCarousel() {
+
+
+    
+    let content = ""
+    let arrayForCarousel = []
+
+    for (var i in pokemon) {
+        arrayForCarousel.push(i)
+    }
+
+    console.log(arrayForCarousel)
+
+    let randomOne = 0
+    let randomTwo = 0
+    let randomThree = 0
+
+
+    while (randomOne === randomTwo || randomOne === randomThree || randomTwo === randomThree) {
+        randomOne = Math.floor(Math.random() * arrayForCarousel.length)
+        randomTwo = Math.floor(Math.random() * arrayForCarousel.length)
+        randomThree = Math.floor(Math.random() * arrayForCarousel.length)
+    }
+
+    console.log(`numerele randomizate sunt ${randomOne} ${randomTwo} ${randomThree}`)
+
+
+    content = `
+        <button class="carousel__button carousel__button--left is-hidden">
+        <div class="sageataStanga"></div>
+    </button>
+    <div class="carousel__track-container">
+        <ul class="carousel__track">
+<li class="carousel__slide current-slide">
+<div class="divCarousel">
+    <div class="container ${pokemon[arrayForCarousel[randomOne]].tip}" onclick="detaliiProba('1')"></div>
+    <h1 onclick="detaliiProba('${arrayForCarousel[randomOne]}')"> ${pokemon[arrayForCarousel[randomOne]].name} </h1>
+    <img class="carousel__image" src="${pokemon[arrayForCarousel[randomOne]].scr}" alt="" onclick="detaliiProba('${arrayForCarousel[randomOne]}')">
+</div>
+
+<li class="carousel__slide ">
+<div class="divCarousel">
+    <div class="container ${pokemon[arrayForCarousel[randomTwo]].tip}" onclick="detaliiProba('1')"></div>
+    <h1 onclick="detaliiProba('${arrayForCarousel[randomTwo]}')"> ${pokemon[arrayForCarousel[randomTwo]].name} </h1>
+    <img class="carousel__image" src="${pokemon[arrayForCarousel[randomTwo]].scr}" alt="" onclick="detaliiProba('${arrayForCarousel[randomTwo]}')">
+</div>
+
+<li class="carousel__slide ">
+<div class="divCarousel">
+    <div class="container ${pokemon[arrayForCarousel[randomThree]].tip}" onclick="detaliiProba('1')"></div>
+    <h1 onclick="detaliiProba('${arrayForCarousel[randomThree]}')"> ${pokemon[arrayForCarousel[randomThree]].name} </h1>
+    <img class="carousel__image" src="${pokemon[arrayForCarousel[randomThree]].scr}" alt="" onclick="detaliiProba('${arrayForCarousel[randomThree]}')">
+</div>
+</ul>
+</div>
+<div class="carousel__nav">
+    <button class="carousel__indicator current-slide"></button>
+    <button class="carousel__indicator"></button>
+    <button class="carousel__indicator"></button>
+</div>
+<button class="carousel__button carousel__button--right">
+    <div class="sageataDreapta"></div>
+</button>
+
+`
+
+    document.querySelector(".carousel").innerHTML = content
+
+    carouselBehaviour()
+}
+
+
+
+function carouselBehaviour(){
+
+    
+const track = document.querySelector('.carousel__track')
+const slides = Array.from(track.children)
+
+const nextButton = document.querySelector(".carousel__button--right")
+const prevButton = document.querySelector(".carousel__button--left")
+const dotsNav = document.querySelector(".carousel__nav")
+const dots = Array.from(dotsNav.children)
+
+const slideWidth = slides[0].getBoundingClientRect().width
+
+// console.log(slideSize)
+// slides[0].style.left = slideWidth * 0 + "px"
+// slides[1].style.left = slideWidth * 1 + "px"
+// slides[2].style.left = slideWidth * 2 + "px"
+
+const setSlidePosition = (slide, index) => {
+    slide.style.left = slideWidth * index + "px"
+}
+slides.forEach(setSlidePosition)
+
+
+const moveToSlide = (track, currentSlide, targetSlide) => {
+    track.style.transform = 'translatex(-' + targetSlide.style.left + ')'
+    currentSlide.classList.remove('current-slide')
+    targetSlide.classList.add('current-slide')
+}
+
+
+const updateDots = (currentDot, targetDot) => {
+    currentDot.classList.remove('current-slide')
+    targetDot.classList.add('current-slide')
+}
+
+
+const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
+    if (targetIndex === 0) {
+        prevButton.classList.add('is-hidden')
+        nextButton.classList.remove('is-hidden')
+    } else if (targetIndex === slides.length - 1) {
+        nextButton.classList.add('is-hidden')
+        prevButton.classList.remove('is-hidden')
+    } else {
+        prevButton.classList.remove('is-hidden')
+        nextButton.classList.remove('is-hidden')
+    }
+}
+
+
+prevButton.addEventListener("click", e => {
+    const currentSlide = track.querySelector(".current-slide")
+    const prevSlide = currentSlide.previousElementSibling
+    const currentDot = dotsNav.querySelector('.current-slide')
+    const prevDot = currentDot.previousElementSibling
+    const prevIndex = slides.findIndex(slide => slide === prevSlide)
+
+
+    moveToSlide(track, currentSlide, prevSlide)
+    updateDots(currentDot, prevDot)
+    hideShowArrows(slides, prevButton, nextButton, prevIndex)
+
+})
+
+
+nextButton.addEventListener("click", e => {
+    const currentSlide = track.querySelector(".current-slide")
+    const nextSlide = currentSlide.nextElementSibling
+    const currentDot = dotsNav.querySelector('.current-slide')
+    const nextDot = currentDot.nextElementSibling
+    const nextIndex = slides.findIndex(slide => slide === nextSlide)
+
+    moveToSlide(track, currentSlide, nextSlide)
+    updateDots(currentDot, nextDot)
+    hideShowArrows(slides, prevButton, nextButton, nextIndex)
+
+})
+
+dotsNav.addEventListener('click', e => {
+    const targetDot = e.target.closest('button')
+
+    if (!targetDot) return;
+
+    const currentSlide = track.querySelector('.current-slide')
+    const currentDot = dotsNav.querySelector('.current-slide')
+    const targetIndex = dots.findIndex(dot => dot === targetDot)
+    const targetSlide = slides[targetIndex]
+
+    moveToSlide(track, currentSlide, targetSlide)
+    updateDots(currentDot, targetDot)
+    hideShowArrows(slides, prevButton, nextButton, targetIndex)
+})
+
+
+
+}
+

@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <script  src="carousel.js"></script> -->
+    <script  defer  src="script.js"></script>
+
+
 </head>
 
 <body onload="getObj('main')">
@@ -21,35 +25,49 @@
         <div class="header">
 
             <div class="carousel">
-                <button class="carousel__button carousel__button--left">
-                    <img class="sageataStanga"></img>
+                <!-- <button class="carousel__button carousel__button--left is-hidden">
+                    <div class="sageataStanga"></div>
                 </button>
                 <div class="carousel__track-container">
                     <ul class="carousel__track">
-                        <li class="carousel__slide">
-                            <img class="carousel__image" src="charmander.png" alt="">
+                        <li class="carousel__slide current-slide">
+                            <div class="divCarousel">
+                                <div class="container Iarba" onclick="detaliiProba('1')"></div>
+                                <h1 onclick="detaliiProba('1')"> Charmander </h1>
+                                <img class="carousel__image" src="charmander.png" alt="" onclick="detaliiProba('1')">
+                            </div>
                         </li>
                         <li class="carousel__slide">
-                            <img class="carousel__image" src="charmander.png" alt="">
+                            <div class="divCarousel">
+                                <div class="container Iarba"></div>
+                                <h1>Evee</h1>
+                                <img class="carousel__image" src="evee.png" alt="">
+                            </div>
+
                         </li>
                         <li class="carousel__slide">
-                            <img class="carousel__image" src="charmander.png" alt="">
+
+                            <div class="divCarousel">
+                                <div class="container Iarba"></div>
+                                <h1>Rattata</h1>
+                                <img class="carousel__image" src="rattata.png" alt="">
+                            </div>
+
                         </li>
                     </ul>
                 </div>
-                <button class="carousel__button carousel__button--right">
-                    <img class="sageataDreapta"></img>
-                </button>
-
                 <div class="carousel__nav">
                     <button class="carousel__indicator current-slide"></button>
                     <button class="carousel__indicator"></button>
                     <button class="carousel__indicator"></button>
                 </div>
-
+                <button class="carousel__button carousel__button--right">
+                    <div class="sageataDreapta"></div>
+                </button> -->
             </div>
 
         </div>
+
         <div class="navbar">
             <div>
                 <img src="pokeball_PNG26.png" alt="">
@@ -66,7 +84,7 @@
         </div>
         <div class='footer'>footer </div>
     </div>
-    <script src="script.js"></script>
+
 </body>
 
 </html>

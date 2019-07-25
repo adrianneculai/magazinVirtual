@@ -11,16 +11,15 @@
 a {
     text-decoration: none;
     cursor: pointer;
-    }
+}
 
 a:link {
     text-decoration: none;
-    }
-
-a:visited {
-text-decoration: none;
 }
 
+a:visited {
+    text-decoration: none;
+}
 
 .loader {
     position: fixed;
@@ -37,15 +36,6 @@ text-decoration: none;
 
 #cos.ascunde {
     display: none;
-}
-
-.siema {
-    height: 30vh;
-    background-color: aquamarine;
-}
-
-.siema>div>img {
-    width: 20px;
 }
 
 #pila {
@@ -80,11 +70,7 @@ body {
     display: grid;
     grid-template-rows: 60px 30vh 1fr auto;
     grid-template-columns: 1fr 250px 250px 250px 250px 250px 1fr;
-    grid-template-areas: 
-    ". b b b b b ." 
-    ". a a a a a ." 
-    ". c c c c c ." 
-    ". d d d d d .";
+    grid-template-areas: ". b b b b b ." ". a a a a a ." ". c c c c c ." ". d d d d d .";
 }
 
 .navbar>button {
@@ -138,7 +124,6 @@ body {
     padding: 0px 20px;
     grid-area: b;
     background-color: rgb(0, 0, 0);
-    
 }
 
 .footer {
@@ -148,7 +133,14 @@ body {
 }
 
 .content {
-    background-color: rgb(199, 199, 199);
+    background: rgba(122, 110, 122, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(122, 110, 122, 1) 0%, rgba(122, 110, 122, 1) 4%, rgba(61, 61, 61, 1) 51%, rgba(0, 0, 0, 1) 91%, rgba(0, 0, 0, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(122, 110, 122, 1)), color-stop(4%, rgba(122, 110, 122, 1)), color-stop(51%, rgba(61, 61, 61, 1)), color-stop(91%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(122, 110, 122, 1) 0%, rgba(122, 110, 122, 1) 4%, rgba(61, 61, 61, 1) 51%, rgba(0, 0, 0, 1) 91%, rgba(0, 0, 0, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(122, 110, 122, 1) 0%, rgba(122, 110, 122, 1) 4%, rgba(61, 61, 61, 1) 51%, rgba(0, 0, 0, 1) 91%, rgba(0, 0, 0, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(122, 110, 122, 1) 0%, rgba(122, 110, 122, 1) 4%, rgba(61, 61, 61, 1) 51%, rgba(0, 0, 0, 1) 91%, rgba(0, 0, 0, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(122, 110, 122, 1) 0%, rgba(122, 110, 122, 1) 4%, rgba(61, 61, 61, 1) 51%, rgba(0, 0, 0, 1) 91%, rgba(0, 0, 0, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a6e7a', endColorstr='#000000', GradientType=1);
     padding-top: 20px;
     padding-bottom: 20px;
     grid-area: c;
@@ -214,8 +206,7 @@ body {
     display: none;
 }
 
-.tableName{
-
+.tableName {
     cursor: pointer;
 }
 
@@ -238,115 +229,154 @@ th {
     font-size: 20px;
 }
 
-.fullscreen{
-position: fixed;
-top: 0;
-right: 0;
-left: 0;
-bottom:0;
-display: flex;
-justify-content: center;
-align-items: center;
+.fullscreen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 /* --------------------carousel----------------------- */
 
-.carousel{
+.carousel {
     position: relative;
-    height: 800px;
-    width: 80%;
+    height: 30vh;
+    width: 100%;
     margin: 0 auto;
+    background: rgba(122, 110, 122, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(122, 110, 122, 1) 0%, rgba(122, 110, 122, 1) 4%, rgba(61, 61, 61, 1) 51%, rgba(0, 0, 0, 1) 91%, rgba(0, 0, 0, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(122, 110, 122, 1)), color-stop(4%, rgba(122, 110, 122, 1)), color-stop(51%, rgba(61, 61, 61, 1)), color-stop(91%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(122, 110, 122, 1) 0%, rgba(122, 110, 122, 1) 4%, rgba(61, 61, 61, 1) 51%, rgba(0, 0, 0, 1) 91%, rgba(0, 0, 0, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(122, 110, 122, 1) 0%, rgba(122, 110, 122, 1) 4%, rgba(61, 61, 61, 1) 51%, rgba(0, 0, 0, 1) 91%, rgba(0, 0, 0, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(122, 110, 122, 1) 0%, rgba(122, 110, 122, 1) 4%, rgba(61, 61, 61, 1) 51%, rgba(0, 0, 0, 1) 91%, rgba(0, 0, 0, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(122, 110, 122, 1) 0%, rgba(122, 110, 122, 1) 4%, rgba(61, 61, 61, 1) 51%, rgba(0, 0, 0, 1) 91%, rgba(0, 0, 0, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a6e7a', endColorstr='#000000', GradientType=1);
 }
 
-.carousel__image{
-width:100%;
+.carousel__track-container {
+    /* background: aqua; */
+    /* padding: 10px; */
+
+    height: 80%;
+    position: relative;
+    overflow: hidden;
 }
 
-.carousel__track-container{
-
-background: aqua;
-/* padding: 10px; */
-height: 100%;
-position: relative;
+.carousel__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transfom 250ms ease-in;
 }
 
-.carousel__track{
-padding: 0;
-margin:0;
-list-style: none;
-}
-
-.carousel__slide{
-    position:absolute;
-    top:0;
-    bottom: 0;
-    width:100%;
-}
-.carousel__button{
+.carousel__slide {
     position: absolute;
-    top:50%;
-    transform:translate(-50%);
-     background: transparent;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+    /* transform: translate(-50%); */
+    background: transparent;
     border: 0;
 }
 
-.carousel__button--left{
-    left:-50px;
+.carousel__button--left {
+    left: 100px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel__button--right {
+    right: 100px;
     cursor: pointer;
 }
 
-.carousel__button--right{
-    right:-50px;
+.carousel__nav {
+    position: relative;
+    /* background: pink; */
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    
+}
+
+.carousel__indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(202, 26, 26, 0.3);
+    margin: 0 10px;
+    cursor: pointer;
+   }
+
+.carousel__indicator.current-slide {
+    background: rgba(167, 6, 6, 0.75);
+}
+
+.is-hidden {
+    display: none;
+}
+
+.divCarousel {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel__image {
+    height: 100%;
+    
+}
+
+.divCarousel h1, .divCarousel div {
+    font-size: 60px;
+    margin: auto 0;
+    color: wheat;
+    margin-right: 10px;
+}
+
+.divCarousel h1, .divCarousel div, .divCarousel img{
     cursor: pointer;
 }
 
-.carousel__nav{
-/* background: pink; */
-display: flex;
-justify-content: center;
-padding: 10px 0;
-}
-.carousel__indicator{
-border:0;
-border-radius: 50%;
-width:20px;
-height:20px;
-background: rgba(0, 0, 0, .3);
-margin: 0 10px;
-}
-
-
-.carousel__indicator.current-slide{
-    background: rgba(0, 0, 0, .75);
-}
 /* --------------------alert----------------------- */
 
-
-.bgWhite{
-
-/* background-color: white; */
-padding: 60px;
-width: 200px;
-height: 300px;
-background:url(pokeAlert.png);
-background-position: center;
-background-size: 50% 50%;
-background-repeat: no-repeat;
-background-size: contain;
-/* background-color: white; */
-color: white;
-text-align: center;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 20px;
-filter: drop-shadow(0 0 0.75rem crimson);
+.bgWhite {
+    /* background-color: white; */
+    padding: 60px;
+    width: 200px;
+    height: 300px;
+    background: url(pokeAlert.png);
+    background-position: center;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-color: white; */
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    filter: drop-shadow(0 0 0.75rem crimson);
 }
 
-.spanAlert{
-font-size: 15px;
-font-weight: bold;
+.spanAlert {
+    font-size: 15px;
+    font-weight: bold;
 }
 
-#okBtn{
-    width:55px;
+#okBtn {
+    width: 55px;
     height: 55px;
     padding: 5px;
     border-radius: 50%;
@@ -356,66 +386,57 @@ font-weight: bold;
     cursor: pointer;
 }
 
-#okBtn:hover{
-    background: rgb(249,2,19);
-    background: linear-gradient(180deg, rgba(249,2,19,1) 0%, rgba(0,0,0,1) 100%); 
-
+#okBtn:hover {
+    background: rgb(249, 2, 19);
+    background: linear-gradient(180deg, rgba(249, 2, 19, 1) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 /* --------------------sageti la tabel cos----------------------- */
 
-
-.tableCantitate{
-    width:120px;
+.tableCantitate {
+    width: 120px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15pt;
     /* font-weight: bold; */
 }
 
-.flex{
+.flex {
     display: flex;
-    justify-content:space-between;
-    align-items: center ;
+    justify-content: space-between;
+    align-items: center;
 }
-
 
 .sageataStanga {
     width: 23px;
     height: 40px;
     background: url(sageti.png) 100px 95px;
-     background-size: 50px 50px;
-     cursor: pointer;
+    background-size: 50px 50px;
+    cursor: pointer;
 }
 
 .sageataDreapta {
     width: 23px;
     height: 40px;
     background: url(sageti.png) 123px 95px;
-     background-size: 50px 50px;
-     cursor: pointer;
-
+    background-size: 50px 50px;
+    cursor: pointer;
 }
 
-.sageataStanga:hover{
-   
+.sageataStanga:hover {
     width: 23px;
     height: 40px;
     background: url(sagetiRosu.png) 100px 95px;
-     background-size: 50px 50px;
-     cursor: pointer;
-
+    background-size: 50px 50px;
+    cursor: pointer;
 }
 
-
-.sageataDreapta:hover{
+.sageataDreapta:hover {
     width: 23px;
     height: 40px;
     background: url(sagetVerdei.png) 123px 95px;
-     background-size: 50px 50px;
-     cursor: pointer;
-    }
-
-
+    background-size: 50px 50px;
+    cursor: pointer;
+}
 
 /* --------------------detalii----------------------- */
 
@@ -427,12 +448,9 @@ font-weight: bold;
     height: 100%;
     background-color: white;
     grid-template-columns: 3fr 3fr 1fr;
-    grid-template-rows: 1fr 1fr ;
-    grid-template-areas: 
-    "stanga dreapta ." 
-    "stanga dreapta .";
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "stanga dreapta ." "stanga dreapta .";
 }
-
 
 .stanga {
     grid-area: stanga;
@@ -449,96 +467,88 @@ font-weight: bold;
     border: 1px solid brown; */
     justify-self: center;
     align-self: top;
-   }
+}
 
-.coloane{
+.coloane {
     column-count: 2;
     column-gap: 25px;
     /* column-rule-style: dotted; */
 }
 
-.dreapta hr{
-
+.dreapta hr {
     border-top: .5px solid rgba(173, 158, 158, 0.199);
-
 }
-.cumpara{
+
+.cumpara {
     grid-area: cumpara;
     justify-self: center;
     align-self: center;
 }
-.butonCumpara{
+
+.butonCumpara {
     border-radius: 8px;
     color: rgb(255, 255, 255);
     background-color: red;
     width: 45%;
     padding: 10px;
     font-weight: 550;
-    
 }
 
 .stanga>#poza {
     justify-self: center;
-    width:300px;
-    height:300px;
-    }
-   
-
-.stanga>#pozaShop {
-justify-self: center;
-width:300px;
-height:300px;
-cursor: pointer;
-filter: drop-shadow(0 0 0.75rem crimson);
+    width: 300px;
+    height: 300px;
 }
 
+.stanga>#pozaShop {
+    justify-self: center;
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 0.75rem crimson);
+}
 
-#pozaShop:hover{
+#pozaShop:hover {
     filter: drop-shadow(0 0 10rem crimson);
 }
 
-
-#nrBuc{
+#nrBuc {
     border-radius: 8px;
-    float:none;
+    float: none;
     width: 45%;
     border: 1px solid black;
 }
 
-.tipPoke{
-display:flex;
-align-items: center;
+.tipPoke {
+    display: flex;
+    align-items: center;
 }
 
 /* ----------------------------alerta la cumparare----------------------------- */
 
-.alertDiv{
-position:absolute;
-left:0%;
-right:0%;
-margin-left:auto;
-margin-right:auto;
-width:100%;
-background-color: brown;
-text-align: center;
-font-size:25px;
-color: white;
-font-family: Arial, Helvetica, sans-serif;
-padding: 20px 0;
-
-visibility: visible;
-opacity: 1;
-transition: opacity 2s linear;
+.alertDiv {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: brown;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px 0;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s linear;
 }
 
 .divHidden {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
-  }
-
-
-
+}
 
 /* ----------------------------formular----------------------------- */
 
@@ -584,7 +594,6 @@ td {
     background-size: contain;
     background-image: url(cumpara.png);
     cursor: pointer;
-
 }
 
 .cumparaButton:hover {
@@ -596,16 +605,13 @@ td {
     background-size: contain;
     background-image: url(cumparaHover.png);
     cursor: pointer;
-
 }
-
 
 .editButton:hover {
     width: 40px;
     height: 40px;
     background-image: url(editHover.png);
     cursor: pointer;
-
 }
 
 .deleteButton {
@@ -637,7 +643,6 @@ td {
     flex-direction: row;
     flex-wrap: wrap; */
 }
-
 
 input, select, textarea, form>button {
     float: left;
@@ -690,9 +695,7 @@ textarea {
     text-align: left;
 }
 
-
 /* ----------------------------poze tip pokemoni ----------------------------- */
-
 
 .Normal {
     background: url(pokemon\ tip.png) 0 0;
@@ -775,8 +778,6 @@ textarea {
 
 /* ----------------------------responsive----------------------------- */
 
-
-
 @media only screen and (max-width: 1300px) {
     .layout {
         width: 100vw;
@@ -787,7 +788,7 @@ textarea {
         grid-template-areas: ". b b b b ." ". a a a a ." ". c c c c ." ". d d d d .";
     }
     .content {
-        background-color: rgb(199, 199, 199);
+        /* background-color: rgb(199, 199, 199); */
         padding-top: 20px;
         padding-bottom: 20px;
         grid-area: c;
