@@ -17,50 +17,56 @@
     <div class="loader">
         <img src="pikaball.gif" alt="loading...">
     </div>
+
+    <div class="alertDiv divHidden">Proba</div>
+
     <div class="layout">
         <div class="header">
-
             <div class="carousel"></div>
-
         </div>
 
         <div class="navbar">
             <div>
                 <img src="pokeball_PNG26.png" alt="">
                 <h1> Pokeshop</h1>
-                <input type="text" id="search" onkeyup="searchPoke()" placeholder="Search...">
-                <select name="tipPokemon" onchange="cautaTip()">
-                    <option value="0" selected="selected"> Tip</option>
-                    <option value="Normal">Normal</option>
-                    <option value="Foc">Foc</option>
-                    <option value="Apa">Apa</option>
-                    <option value="Electric">Electric</option>
-                    <option value="Iarba">Iarba</option>
-                    <option value="Gheata">Gheata</option>
-                    <option value="Luptator">Luptator</option>
-                    <option value="Otrava">Otrava</option>
-                    <option value="Pamant">Pamant</option>
-                    <option value="Zburator">Zburator</option>
-                    <option value="Psihic">Psihic</option>
-                    <option value="Gandac">Gandac</option>
-                    <option value="Roca">Roca</option>
-                    <option value="Fantoma">Fantoma</option>
-                    <option value="Dragon">Dragon</option>
-                    <option value="Intunecat">Intunecat</option>
-                    <option value="Otel">Otel</option>
-                    <option value="Zana">Zana</option>
-                </select>
             </div>
             <button onclick="location.href='cos.html'" type="button">
                 <img src="cart.svg" alt="">
-                Cumparaturi <span id="cos"></span> </button>
+                Cos <span id="cos"></span> </button>
             <button onclick="location.href='admin.html'" type="button">
                 <img src="lock.png" alt="">
                 Admin</button>
         </div>
+
+        <div class="menu">
+            <input type="text" id="search" onkeyup="searchPoke()" placeholder="Search...">
+            <select id="selectTip" name="tipPokemon" onchange="cautaTip()">
+                <option value="0" selected="selected" > Tip</option>
+                <option value="Normal">Normal</option>
+                <option value="Foc">Foc</option>
+                <option value="Apa">Apa</option>
+                <option value="Electric">Electric</option>
+                <option value="Iarba">Iarba</option>
+                <option value="Gheata">Gheata</option>
+                <option value="Luptator">Luptator</option>
+                <option value="Otrava">Otrava</option>
+                <option value="Pamant">Pamant</option>
+                <option value="Zburator">Zburator</option>
+                <option value="Psihic">Psihic</option>
+                <option value="Gandac">Gandac</option>
+                <option value="Roca">Roca</option>
+                <option value="Fantoma">Fantoma</option>
+                <option value="Dragon">Dragon</option>
+                <option value="Intunecat">Intunecat</option>
+                <option value="Otel">Otel</option>
+                <option value="Zana">Zana</option>
+            </select>
+
+        </div>
+
         <div class='content'>
         </div>
-        <div class='footer'>footer </div>
+        <div class='footer'> Powered by <a href="https://pokemon.fandom.com/wiki/Pok%C3%A9mon_Wiki">pokemons</a> and <a href="https://firebase.google.com/">Firebase</a> </div>
     </div>
 
 </body>

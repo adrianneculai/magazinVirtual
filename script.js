@@ -40,6 +40,16 @@ async function getObj(param) {
 
 }
 
+function hiddenDiv(idx) {
+    document.querySelector(".alertDiv.divHidden").innerHTML = `ai pus in cos un ${pokemon[idx].name}`
+
+    document.querySelector(".alertDiv").classList.remove("divHidden")
+    setTimeout(() => {
+        console.log("merge set timeout")
+        document.querySelector(".alertDiv").classList.add("divHidden")
+    }, 500) 
+}
+
 
 function draw() {
     var content = ""
@@ -160,6 +170,7 @@ function numarProduse() {
     return numar
 }
 
+
 // document.querySelector(".alertDiv").classList.add("divHidden")
 
 
@@ -177,7 +188,7 @@ function adaugaInCos(idx) {
                 console.log("a intrat in for if")
                 if (document.querySelector("#nrBuc").value * 1 <= pokemon[idx].cantitate * 1) {
                     pokeCart[i].cantitate += document.querySelector("#nrBuc").value * 1
-                    location.href='cos.html'
+                    location.href = 'cos.html'
                 } else {
                     alertulMeuDet(idx)
                 }
@@ -185,6 +196,8 @@ function adaugaInCos(idx) {
             else {
                 console.log("a intrat in else if")
                 pokeCart[i].cantitate++
+                // document.querySelector(".alertDiv.divHidden").innerHTML = `ai pus in cos un ${pokemon[idx].name}`
+                hiddenDiv(idx)
             }
 
         }
@@ -200,7 +213,7 @@ function adaugaInCos(idx) {
                         index: idx
                     }
                 )
-                location.href='cos.html'
+                location.href = 'cos.html'
             } else {
                 alertulMeuDet(idx)
             }
@@ -214,6 +227,10 @@ function adaugaInCos(idx) {
                     index: idx
                 }
             )
+            // document.querySelector(".alertDiv.divHidden").innerHTML = `ai pus in cos un ${pokemon[idx].name}`
+            hiddenDiv(idx)
+
+
         }
     }
 

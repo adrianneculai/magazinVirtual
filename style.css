@@ -68,11 +68,12 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-rows: 60px 30vh 1fr auto;
+    grid-template-rows: 60px 30vh 60px 1fr auto;
     grid-template-columns: 1fr 250px 250px 250px 250px 250px 1fr;
     grid-template-areas: 
     ". b b b b b ." 
     ". a a a a a ." 
+    ". m m m m m ."
     ". c c c c c ." 
     ". d d d d d .";
 }
@@ -81,10 +82,10 @@ body {
     background-color: rgb(250, 189, 75);
     color: rgb(15, 13, 10);
     padding: 0px 20px;
-    height: 80%;
+    height: 40px;
     font-size: 120%;
     border-radius: 10px;
-    width: auto;
+    /* width: auto; */
     margin-left: 10px;
     display: flex;
     align-items: center;
@@ -152,6 +153,21 @@ body {
     grid-template-columns: repeat(5, minmax(100px, 1fr));
     grid-gap: 20px;
     padding: 20px;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: rgb(0, 0, 0);
+    grid-area: m;
+    height: 50px;
+    height: 100%;
+}
+
+#search, #selectTip{
+    width: 20%;
 }
 
 .produseWrap {
@@ -457,13 +473,13 @@ th {
     background-color: white;
     grid-template-columns: 3fr 3fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "stanga dreapta ." "stanga dreapta .";
+    grid-template-areas: 
+    "stanga dreapta ." 
+    "stanga dreapta .";
 }
 
 .stanga {
     grid-area: stanga;
-    /* background-color: aqua;
-    border: 1px solid brown; */
     justify-self: center;
     align-self: top;
     text-align: center;
@@ -471,16 +487,14 @@ th {
 
 .dreapta {
     grid-area: dreapta;
-    /* background-color: aqua;
-    border: 1px solid brown; */
     justify-self: center;
     align-self: top;
+    
 }
 
 .coloane {
     column-count: 2;
     column-gap: 25px;
-    /* column-rule-style: dotted; */
 }
 
 .dreapta hr {
@@ -537,7 +551,7 @@ th {
 /* ----------------------------alerta la cumparare----------------------------- */
 
 .alertDiv {
-    position: absolute;
+    position: fixed;
     left: 0%;
     right: 0%;
     margin-left: auto;
@@ -548,17 +562,19 @@ th {
     font-size: 25px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    z-index:102;
     padding: 20px 0;
     visibility: visible;
-    opacity: 1;
-    transition: opacity 2s linear;
+    animation: cssAnimation 1s forwards;
 }
 
-.divHidden {
+.alertDiv.divHidden {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s 2s, opacity 2s linear;
+    transition: visibility 0s 1s, opacity 2s linear;
 }
+
+
 
 /* ----------------------------formular----------------------------- */
 
@@ -682,7 +698,10 @@ textarea {
     display: inline-grid;
     grid-template-rows: 60px 1fr auto;
     grid-template-columns: 1fr 250px 250px 250px 250px 250px 1fr;
-    grid-template-areas: ". b b b b b ." ". e e e e e ." ". d d d d d .";
+    grid-template-areas: 
+    ". b b b b b ." 
+    ". e e e e e ." 
+    ". d d d d d .";
 }
 
 .adaugaBtn {
@@ -786,6 +805,15 @@ textarea {
     background-size: 449px 190px;
 }
 
+.footer{
+    color: wheat;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+
 /* ----------------------------responsive----------------------------- */
 
 @media only screen and (max-width: 1300px) {
@@ -793,9 +821,14 @@ textarea {
         width: 100vw;
         height: 100vh;
         display: grid;
-        grid-template-rows: 60px 30vh 1fr auto;
+        grid-template-rows: 60px 30vh 60px 1fr auto;
         grid-template-columns: 1fr 250px 250px 250px 250px 1fr;
-        grid-template-areas: ". b b b b ." ". a a a a ." ". c c c c ." ". d d d d .";
+        grid-template-areas: 
+        ". b b b b ." 
+        ". a a a a ."
+        ". m m m m ." 
+        ". c c c c ." 
+        ". d d d d .";
     }
     .content {
         /* background-color: rgb(199, 199, 199); */
@@ -813,7 +846,10 @@ textarea {
         display: inline-grid;
         grid-template-rows: 60px 1fr auto;
         grid-template-columns: 1fr 250px 250px 250px 250px 1fr;
-        grid-template-areas: ". b b b b ." ". e e e e ." ". d d d d .";
+        grid-template-areas: 
+        ". b b b b ." 
+        ". e e e e ." 
+        ". d d d d .";
     }
 }
 
@@ -822,9 +858,14 @@ textarea {
         width: 100vw;
         height: 100vh;
         display: grid;
-        grid-template-rows: 60px 30vh 1fr auto;
+        grid-template-rows: 60px 30vh 60px 1fr auto;
         grid-template-columns: 1fr 250px 250px 250px 1fr;
-        grid-template-areas: ". b b b ." ". a a a ." ". c c c ." ". d d d .";
+        grid-template-areas: 
+        ". b b b ." 
+        ". a a a ." 
+        ". m m m ." 
+        ". c c c ."
+        ". d d d .";
     }
     .content {
         background-color: rgb(199, 199, 199);
@@ -842,7 +883,15 @@ textarea {
         display: inline-grid;
         grid-template-rows: 60px 1fr auto;
         grid-template-columns: 1fr 250px 250px 250px 1fr;
-        grid-template-areas: ". b b b ." ". e e e ." ". d d d .";
+        grid-template-areas: 
+        ". b b b ." 
+        ". e e e ." 
+        ". d d d .";
+    }
+
+    .coloane {
+        column-count: 1;
+        column-gap: 25px;
     }
 }
 
@@ -853,8 +902,28 @@ textarea {
         display: grid;
         grid-template-rows: 60px 30vh 1fr auto;
         grid-template-columns: 1fr 250px 250px 1fr;
-        grid-template-areas: ". b b ." ". a a ." ". c c ." ". d d .";
+        grid-template-areas: 
+        ". b b ." 
+        ". a a ."
+        ". m m ."
+        ". c c ." 
+        ". d d .";
     }
+     #search, #selectTip{
+        width: 40%;
+    }
+
+
+
+
+        .carousel__button {
+            top: 80%;
+        }
+
+        .divCarousel h1{
+            font-size: 30px;
+        }
+        
     .content {
         background-color: rgb(199, 199, 199);
         padding-top: 20px;
@@ -871,21 +940,75 @@ textarea {
         display: inline-grid;
         grid-template-rows: 60px 1fr auto;
         grid-template-columns: 1fr 250px 250px 1fr;
-        grid-template-areas: ". b b ." ". e e ." ". d d .";
+        grid-template-areas: 
+        ". b b ." 
+        ". e e ." 
+        ". d d .";
+    }
+    #detaliiPoke {
+        border-radius: 20px;
+        padding: 20px;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        grid-template-columns: 1fr ;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "dreapta dreapta ." 
+        "stanga stanga ."
+        ;
+    }
+    .tipPoke{
+        justify-content: center;
+    }
+    .coloane {
+        column-count: 2;
+    }
+    .dreapta h1{
+        text-align: center;
     }
 }
 
 @media only screen and (max-width: 480px) {
+
     .layout {
         width: 100vw;
         height: 100vh;
         display: grid;
-        grid-template-rows: 60px 30vh 1fr auto;
+        grid-template-rows: 120px 60px auto;
         grid-template-columns: 1fr 250px 1fr;
-        grid-template-areas: ". b ." ". a ." ". c ." ". d .";
+        grid-template-areas: 
+        ". b ."
+        ". a  ."
+        ". m ." 
+        ". c ." 
+        ". d .";
+    }
+
+    .header{
+        display: none;
+    }
+    .navbar{
+        display: flex;
+        flex-flow: column;    
+        }
+    .navbar button{
+          width: auto;    
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 10px;
+          padding: 10px;
+            }
+        #search, #selectTip{
+        width: 40%;
+    }
+    body{
+        background: rgb(0, 0, 0);
     }
     .content {
-        background-color: rgb(199, 199, 199);
+        background-color: rgb(27, 26, 26);
         padding-top: 20px;
         padding-bottom: 20px;
         grid-area: c;
@@ -898,8 +1021,37 @@ textarea {
         width: 100vw;
         height: 100vh;
         display: inline-grid;
-        grid-template-rows: 60px 1fr auto;
+        grid-template-rows: 100px 1fr auto;
+        grid-template-columns:1fr 350px 1fr;
+        grid-template-areas: 
+        ". b ." 
+        ". e ." 
+        ". d .";
+    }
+    .manage{
+/* width: 300px; */
+    }
+    #detaliiPoke {
+        border-radius: 20px;
+        padding: 30px;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
         grid-template-columns: 1fr 250px 1fr;
-        grid-template-areas: ". b ." ". e ." ". d .";
+        /* grid-template-rows: 1fr 250px 1fr; */
+        grid-template-areas: 
+        ". dreapta ." 
+        ". stanga .";
+    }
+    .coloane {
+        column-count: 1;
+    }
+    #poza{
+        width: 100px;
+        height: 100px;
+    }
+    .navbar div{
+        justify-content: center;
     }
 }
