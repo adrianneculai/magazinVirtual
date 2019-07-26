@@ -170,31 +170,40 @@ function adaugaInCos(idx) {
         pokeCart = JSON.parse(localStorage.getItem("pokemon"))
     }
     var gasit = false;
-
     for (var i = 0; i < pokeCart.length; i++) {
         if (pokeCart[i].name == pokemon[idx].name) {
             gasit = true;
             if (document.querySelector("#nrBuc") != null) {
                 console.log("a intrat in for if")
-                pokeCart[i].cantitate += document.querySelector("#nrBuc").value * 1
-
+                if (document.querySelector("#nrBuc").value * 1 <= pokemon[idx].cantitate * 1) {
+                    pokeCart[i].cantitate += document.querySelector("#nrBuc").value * 1
+                    location.href='cos.html'
+                } else {
+                    alertulMeuDet(idx)
+                }
             }
             else {
                 console.log("a intrat in else if")
                 pokeCart[i].cantitate++
             }
+
         }
     }
     if (!gasit) {
         if (document.querySelector("#nrBuc") != null) {
-            pokeCart.push(
-                {
-                    name: pokemon[idx].name,
-                    price: pokemon[idx].price,
-                    cantitate: document.querySelector("#nrBuc").value * 1,
-                    index: idx
-                }
-            )
+            if (document.querySelector("#nrBuc").value * 1 <= pokemon[idx].cantitate * 1) {
+                pokeCart.push(
+                    {
+                        name: pokemon[idx].name,
+                        price: pokemon[idx].price,
+                        cantitate: document.querySelector("#nrBuc").value * 1,
+                        index: idx
+                    }
+                )
+                location.href='cos.html'
+            } else {
+                alertulMeuDet(idx)
+            }
 
         } else if (document.querySelector("#btnCumpUnProdus").value != null) {
             pokeCart.push(
@@ -207,6 +216,7 @@ function adaugaInCos(idx) {
             )
         }
     }
+
     localStorage.setItem("pokemon", JSON.stringify(pokeCart))
     document.querySelector("#cos").classList.remove("ascunde")
     document.querySelector("#cos").innerHTML = `&nbsp(${numarProduse()})`
@@ -331,6 +341,23 @@ function alertulMeu(idx, pokeCart) {
     document.body.appendChild(div);
 }
 
+function alertulMeuDet(idx) {
+
+    var div = document.createElement("div");
+    div.className = "fullscreen";
+    div.innerHTML = `
+    <div class="bgWhite">  <div class="spanAlert"> Ai depasit stocul disponibil </div>
+
+    <hr style="height:15px; visibility:hidden;" />
+
+    (${pokemon[idx].cantitate} buc)
+    <button id="okBtn">Ok</button>
+    </div>`;
+    div.querySelector("#okBtn").addEventListener("click", function () {
+        div.parentElement.removeChild(div)
+    });
+    document.body.appendChild(div);
+}
 
 
 function drawDetalii() {

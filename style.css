@@ -523,8 +523,10 @@ th {
 #nrBuc {
     border-radius: 8px;
     float: none;
-    width: 45%;
+    width: 25%;
     border: 1px solid black;
+    text-align: center;
+    font-size: 12pt
 }
 
 .tipPoke {
