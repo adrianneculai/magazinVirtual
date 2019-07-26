@@ -8,63 +8,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <!-- <script  src="carousel.js"></script> -->
-    <script  defer  src="script.js"></script>
+    <script src="script.js"></script>
 
 
 </head>
 
 <body onload="getObj('main')">
-
     <div class="loader">
-
         <img src="pikaball.gif" alt="loading...">
-
     </div>
-
     <div class="layout">
         <div class="header">
 
-            <div class="carousel">
-                <!-- <button class="carousel__button carousel__button--left is-hidden">
-                    <div class="sageataStanga"></div>
-                </button>
-                <div class="carousel__track-container">
-                    <ul class="carousel__track">
-                        <li class="carousel__slide current-slide">
-                            <div class="divCarousel">
-                                <div class="container Iarba" onclick="detaliiProba('1')"></div>
-                                <h1 onclick="detaliiProba('1')"> Charmander </h1>
-                                <img class="carousel__image" src="charmander.png" alt="" onclick="detaliiProba('1')">
-                            </div>
-                        </li>
-                        <li class="carousel__slide">
-                            <div class="divCarousel">
-                                <div class="container Iarba"></div>
-                                <h1>Evee</h1>
-                                <img class="carousel__image" src="evee.png" alt="">
-                            </div>
-
-                        </li>
-                        <li class="carousel__slide">
-
-                            <div class="divCarousel">
-                                <div class="container Iarba"></div>
-                                <h1>Rattata</h1>
-                                <img class="carousel__image" src="rattata.png" alt="">
-                            </div>
-
-                        </li>
-                    </ul>
-                </div>
-                <div class="carousel__nav">
-                    <button class="carousel__indicator current-slide"></button>
-                    <button class="carousel__indicator"></button>
-                    <button class="carousel__indicator"></button>
-                </div>
-                <button class="carousel__button carousel__button--right">
-                    <div class="sageataDreapta"></div>
-                </button> -->
-            </div>
+            <div class="carousel"></div>
 
         </div>
 
@@ -72,6 +28,28 @@
             <div>
                 <img src="pokeball_PNG26.png" alt="">
                 <h1> Pokeshop</h1>
+                <input type="text" id="search" onkeyup="searchPoke()" placeholder="Search...">
+                <select name="tipPokemon" onchange="cautaTip()">
+                    <option value="0" selected="selected"> Tip</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Foc">Foc</option>
+                    <option value="Apa">Apa</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Iarba">Iarba</option>
+                    <option value="Gheata">Gheata</option>
+                    <option value="Luptator">Luptator</option>
+                    <option value="Otrava">Otrava</option>
+                    <option value="Pamant">Pamant</option>
+                    <option value="Zburator">Zburator</option>
+                    <option value="Psihic">Psihic</option>
+                    <option value="Gandac">Gandac</option>
+                    <option value="Roca">Roca</option>
+                    <option value="Fantoma">Fantoma</option>
+                    <option value="Dragon">Dragon</option>
+                    <option value="Intunecat">Intunecat</option>
+                    <option value="Otel">Otel</option>
+                    <option value="Zana">Zana</option>
+                </select>
             </div>
             <button onclick="location.href='cos.html'" type="button">
                 <img src="cart.svg" alt="">
