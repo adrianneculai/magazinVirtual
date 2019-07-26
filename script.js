@@ -620,9 +620,6 @@ function cautaTip() {
     console.log(list[0].parentElement.classList.add('hide'))
 
     for (var i in list) {
-        // console.log(list[i].classList[1])
-        // console.log("acesta este tipul pe care il caut: " + tipSearch)
-        // console.log(list[i].classList[1] != tipSearch)
 
 
         if (list[i].classList[1] != tipSearch && tipSearch != 0) {
@@ -630,11 +627,6 @@ function cautaTip() {
         } else {
             list[i].parentElement.classList.remove('hide')
         }
-
-
-        // if (tipSearch === 0) {
-        //     document.querySelector(".produseWrap hide").className = "produseWrap"
-        // }
 
     }
 }
